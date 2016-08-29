@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html>
+ <body>
+  <style>
+  body{background-image:url("http://3.bp.blogspot.com/-tudA1oK6AHs/TfiUm9D40_I/AAAAAAAAAHw/COn9yos_zHE/s1600/earth+and+moon.png")}
+  h1 {	
+		color:black;
+	background-color:#21618C;
+	text-align:center;
+	border-style:solid;
+	border-color:#263238;
+	}
+	h2 {	
+		color:#3E4A61;
+	background-color:#D9DAD7;
+	width:200px;
+	border-color:#3E4A61;
+	}
+  </style>
+  	<h1>Calculator</h1>
+  <center><p><input id="yourNumber" type="text" style="height: 60px; font-size: 52px; width: 450px"/></p><center>	
+  <center>	
+  <p>
+  <h2>Basic Functions</h2>
+  <button onclick="onclickNumber('7')" type="button" style="height: 70px; font-size: 40px; width: 70px">7</button>
+  <button onclick="onclickNumber('8')" type="button" style="height: 70px; font-size: 40px; width: 70px">8</button>
+  <button onclick="onclickNumber('9')" type="button" style="height: 70px; font-size: 40px; width: 70px">9</button>
+  <button onclick="onclickNumber('+')" type="button" style="height: 70px; font-size: 40px; width: 70px">+</button>
+  </p>
+
+  <p>
+  <button onclick="onclickNumber('4')" type="button" style="height: 70px; font-size: 40px; width: 70px">4</button>
+  <button onclick="onclickNumber('5')" type="button" style="height: 70px; font-size: 40px; width: 70px">5</button>
+  <button onclick="onclickNumber('6')" type="button" style="height: 70px; font-size: 40px; width: 70px">6</button>
+  <button onclick="onclickNumber('-')" type="button" style="height: 70px; font-size: 40px; width: 70px">-</button>
+  </p>
+
+  <p>
+  <button onclick="onclickNumber('1')" type="button" style="height: 70px; font-size: 40px; width: 70px">1</button>
+  <button onclick="onclickNumber('2')" type="button" style="height: 70px; font-size: 40px; width: 70px">2</button>
+  <button onclick="onclickNumber('3')" type="button" style="height: 70px; font-size: 40px; width: 70px">3</button>
+  <button onclick="onclickNumber('*')" type="button" style="height: 70px; font-size: 40px; width: 70px">*</button>
+  </p>
+
+  <p>
+  <button onclick="onclickClear()" type="button" style="height: 70px; font-size: 40px; width: 70px">C</button>
+  <button onclick="onclickNumber('0')" type="button" style="height: 70px; font-size: 40px; width: 70px">0</button>
+  <button onclick="totalOfNumbers()" type="button" style="height: 70px; font-size: 40px; width: 70px">=</button>
+  <button onclick="onclickNumber('/')" type="button" style="height: 70px; font-size: 40px; width: 70px">/</button>
+  <h2>Scientific Functions</h2>
+  </p>
+  <p>
+  <button onclick="onclickNumber('Square Root:')" type="button" style="height: 70px; font-size: 40px; width: 70px">&#8730 </button>	
+  <button onclick="onclickNumber('^')" type="button" style="height: 70px; font-size: 40px; width: 70px">x^y </button>	
+  <button onclick="onclickNumber('tan')" type="button" style="height: 70px; font-size: 40px; width: 70px">tan </button>	
+  <button onclick="onclickNumber('sin')" type="button" style="height: 70px; font-size: 40px; width: 70px">sin </button>
+  <button onclick="onclickNumber('cos')" type="button" style="height: 70px; font-size: 40px; width: 70px">cos </button>
+  </p>
+  <p>
+<button onclick="onclickMS()" type="button" style="height: 70px; font-size: 40px; width: 70px">MS</button>
+<button onclick="onclickMC()" type="button" style="height: 70px; font-size: 40px; width: 70px">MC</button>    
+<button onclick="onclickMR()" type="button" style="height: 70px; font-size: 40px; width: 70px">MR</button>
+<button onclick="onclickM()" type="button" style="height: 70px; font-size: 40px; width: 70px">M+</button>
+<button onclick="onclickback('<--;')" type="button" style="height: 70px; font-size: 40px; width: 70px"><-- </button>
+<button onclick="newtotalOfNumbers()" type="button" style="height: 70px; font-size: 40px; width: 70px">=</button>
+</p><center>	<!-- The new
+ function onclickback(), is using the backspace "<--" function.-->
+ <h1>Rushi Gandhi</h1>
+  <script>
+
+   var output = document.getElementById("yourNumber"); 
+   var input = document.getElementById("yourNumber"); 
+   input.disabled = true;
+   var clearInput = false;
+   
+ function onclickMS()
+{ 
+		save = (input.value);
+}
+function onclickMC()
+{ 
+    save = "";
+}
+function onclickM()
+{ 
+    var newsave = +save + +input.value;
+    input.value = newsave;
+}
+
+function onclickMR()
+{
+		input.value = input.value + save;
+}
+   function onclickNumber(x) 
+   {
+		if(clearInput)
+			{
+				input.value = "";
+				clearInput = false;
+			} 
+        input.value += x; 
+		
+		if(x == "+" || x == "-" || x == "*" || x == "/"){ 
+        
+		output = document.getElementById("yourNumber");
+        input = document.getElementById("yourNumber");
+        number1 = output.value;
+		output.value = "";
+       }
+   }
+   var position;
+var a;
+var b;
+var total;
+var save;
+var number1;
+var number2;
+var numberLength;
+    
+   function totalOfNumbers(x){
+if (number1.indexOf("+") >= 0)
+   {
+   input = document.getElementById("yourNumber").value;
+   number2 = output.value;
+   numberLength = number1.length;
+   number1 = number1.substr(0,numberLength - 1);
+   number1 = Number(number1);
+   number2 = Number(number2);
+   total = number1 + number2;
+   output.value = total;
+   }
+   
+    else if (number1.indexOf("-") >=0)
+   {
+   input = document.getElementById("yourNumber").value;
+   number2 = output.value;
+   numberLength = number1.length;
+   number1 = number1  .substr(0,numberLength - 1);
+   number1 = Number(number1);
+   number2 = Number(number2);
+   total = number1 - number2;
+   output.value= total;
+   }
+   
+      else if (number1.indexOf("*") >=0)
+   {
+   input = document.getElementById("yourNumber").value;
+   number2 = output.value;
+   numberLength = number1.length;
+   number1 = number1.substr(0,numberLength - 1);
+   number1 = Number(number1);
+   number2 = Number(number2);
+   total = number1 * number2;
+   output.value = total;
+   }
+   
+     else if (number1.indexOf("/") >=0)
+   {
+   input = document.getElementById("yourNumber").value;
+   number2 = output.value;
+   numberLength = number1.length;
+   number1 = number1.substr(0,numberLength - 1);
+   number1 = Number(number1);
+   number2 = Number(number2);
+   total = number1 / number2;
+   output.value = total;
+   }
+  newtotalOfNumbers;
+  }
+    function newtotalOfNumbers(x)
+   {
+   var position;
+   var a;
+   var b;
+   var total;
+   input = document.getElementById("yourNumber").value;
+   
+   	if (input.indexOf("Square Root:") >= 0)
+    { 
+		 position = input.indexOf(':')
+		 b = input.substring(position + 1)
+		 total = Math.sqrt(b);
+		 output.value = total;
+    }
+	
+	else if (input.indexOf("^") >= 0)
+    { 
+		 position = input.indexOf('^')
+		 a = input.substring(0, position)
+		 b = input.substring(position + 1)
+		 total = Math.pow(a,b);
+		 output.value = total;
+    }
+	
+	else if (input.indexOf("tan") >= 0)
+    { 
+		 position = input.indexOf('n')
+		 b = input.substring(position + 1)
+		 total = Math.tan(b);
+		 output.value = total;
+    }
+	
+	else if (input.indexOf("sin") >= 0)
+    { 
+		 position = input.indexOf('n')
+		 b = input.substring(position + 1)
+		 total = Math.sin(b);
+		 output.value = total;
+    }
+	
+	else if (input.indexOf("cos") >= 0)
+    { 
+		 position = input.indexOf('s')
+		 b = input.substring(position + 1)
+		 total = Math.cos(b);
+		 output.value = total;
+    }
+   }
+   
+   function onclickback() {
+    var value = document.getElementById("yourNumber").value;
+    var output_ = value.substr(0, value.length - 1);
+	output.value=output_
+}
+ 
+
+   function onclickClear() 
+    {
+		clearInput = true;
+		output = document.getElementById("yourNumber");
+		input = document.getElementById("yourNumber");
+		output.value = "";
+    }
+	function onclickClearall() 
+    {
+		clearInput = true;
+		output = document.getElementById("yourNumber");
+		input = document.getElementById("yourNumber");
+		output.value = "";
+    }
+  </script>
+ </body>
+</html>
